@@ -18,7 +18,7 @@ namespace ReactFridgeTests.Tests.APITests
         [TestMethod] // Tests the recipe base GET endpoint to ensure it returns the expected JSON of recipies
         public async Task GetRecipes()
         {
-            string JIRA = "JiraProject-4512";
+            string JIRA = jira(4512);
             HttpResponseMessage response = client.GetAsync(recipeEndpoint).Result;
             if (response.IsSuccessStatusCode)
             {

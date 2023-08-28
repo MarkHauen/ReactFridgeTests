@@ -11,7 +11,7 @@ namespace ReactFridgeTests.TestBase
 
         public static string baseURL = "http://localhost:3000";
         public string inventoryEndpoint = $"{baseURL}/inventory";
-        public string recipeEndpoint = $"{baseURL}/recipe";
+        public string recipeEndpoint = $"{baseURL}/recipes";
 
         [TestInitialize]
         public void Setup()
