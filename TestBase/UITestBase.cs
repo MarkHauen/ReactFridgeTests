@@ -9,12 +9,18 @@ namespace ReactFridgeTests.TestBase
 
         protected IWebDriver driver;
 
+        protected string baseURL = "http://localhost:3001/";
+
         [TestInitialize]
         public void Setup()
         {
             Console.WriteLine("UI TESTS RUNNING");
-            driver = new ChromeDriver();
-            driver.Navigate().GoToUrl("http://localhost:3000/");
+            ChromeOptions options = new ChromeOptions();
+            options.AddArgument("--disable-notifications");
+            driver = new ChromeDriver(options);
+            driver.Manage().Window.Maximize();
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+            driver.Navigate().GoToUrl(baseURL);
         }
 
 

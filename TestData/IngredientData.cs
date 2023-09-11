@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ReactFridgeTests.TestData
+﻿namespace ReactFridgeTests.TestData
 {
-    internal class IngredientData
+    public static class IngredientData
     {
         public static string Egg = @"{
             ""id"": 1,

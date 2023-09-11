@@ -1,7 +1,4 @@
-﻿using Newtonsoft.Json.Linq;
-using System.Net;
-
-namespace ReactFridgeTests.TestBase
+﻿namespace ReactFridgeTests.TestBase
 {
     [TestClass]
     public class APITestBase : TestBase

@@ -14,12 +14,14 @@ namespace ReactFridgeTests.TestData
                             ""name"": ""Egg Sandwich"",
                             ""ingredients"": [
                                 {
-                                    ""item"": ""Egg"",
-                                    ""quantity"": 1
+                                    ""id"": 1,
+                                    ""name"": ""Egg"",
+                                    ""quantity"": -1
                                 },
                                 {
-                                    ""item"": ""Bread Slice"",
-                                    ""quantity"": 2
+                                    ""id"": 3,
+                                    ""name"": ""Bread Slice"",
+                                    ""quantity"": -2
                                 }
                             ]
                         },
@@ -27,12 +29,14 @@ namespace ReactFridgeTests.TestData
                             ""name"": ""Cheese Sandwich"",
                             ""ingredients"": [
                                 {
-                                    ""item"": ""Cheese Slice"",
-                                    ""quantity"": 2
+                                    ""id"": 4,
+                                    ""name"": ""Cheese Slice"",
+                                    ""quantity"": -2
                                 },
                                 {
-                                    ""item"": ""Bread Slice"",
-                                    ""quantity"": 2
+                                    ""id"": 3,
+                                    ""name"": ""Bread Slice"",
+                                    ""quantity"": -2
                                 }
                             ]
                         },
@@ -40,20 +44,24 @@ namespace ReactFridgeTests.TestData
                             ""name"": ""BEC Sandwich"",
                             ""ingredients"": [
                                 {
-                                    ""item"": ""Bacon"",
-                                    ""quantity"": 3
+                                    ""id"": 2,
+                                    ""name"": ""Bacon"",
+                                    ""quantity"": -3
                                 },
                                 {
-                                    ""item"": ""Egg"",
-                                    ""quantity"": 1
+                                    ""id"": 1,
+                                    ""name"": ""Egg"",
+                                    ""quantity"": -1
                                 },
                                 {
-                                    ""item"": ""Cheese Slice"",
-                                    ""quantity"": 1
+                                    ""id"": 4,
+                                    ""name"": ""Cheese Slice"",
+                                    ""quantity"": -1
                                 },
                                 {
-                                    ""item"": ""Bread Slice"",
-                                    ""quantity"": 2
+                                    ""id"": 3,
+                                    ""name"": ""Bread Slice"",
+                                    ""quantity"": -2
                                 }
                             ]
                         }

@@ -1,12 +1,8 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using OpenQA.Selenium.DevTools.V113.Network;
 using ReactFridgeTests.TestBase;
 using System.Text;
 using ReactFridgeTests.TestData;
-using System.ComponentModel;
-using System.Diagnostics;
-using OpenQA.Selenium.Support.UI;
 
 namespace ReactFridgeTests.Tests.APITests
 {

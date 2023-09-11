@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using ReactFridgeTests.TestBase;
+using OpenQA.Selenium.Support.UI;
 
 
 namespace ReactFridgeTests.Pages
@@ -14,6 +15,10 @@ namespace ReactFridgeTests.Pages
         private IWebElement ingredientNameInput => driver.FindElement(By.Name("Name-Input"));
         private IWebElement ingredientQuantityInput => driver.FindElement(By.Name("Quantity-Input"));
 
+        private IWebElement recipeDropDown => driver.FindElement(By.Name("Recipe-Select"));
+
+        private IWebElement useItemButton => driver.FindElement(By.Name("UseItem-Button"));
+
 
         private IWebElement[] staticElementsToVerify => new IWebElement[] { ingredientIDInput, ingredientNameInput, ingredientQuantityInput, AddItemButton };
         
@@ -25,12 +30,12 @@ namespace ReactFridgeTests.Pages
       
         public void NavigateTo()
         {
-            driver.Navigate().GoToUrl("http://localhost:4200");
+            driver.Navigate().GoToUrl(baseURL);
         }
 
         public bool IsAt()
         {
-            return driver.Title == "MeanFridge Root";
+            return driver.Title == "React App";
         }
 
         public bool staticElementsArePresent()
@@ -45,11 +50,12 @@ namespace ReactFridgeTests.Pages
             return true;
         }
 
-        public bool ingredientListContains(string ingredientID, string ingredientName, string ingredientQuantity)
+        public bool ingredientListContains(string ingredientName)
         {
             foreach (IWebElement element in inventoryList)
             {
-                if (element.Text.Contains(ingredientID) && element.Text.Contains(ingredientName) && element.Text.Contains(ingredientQuantity))
+                var text = element.Text;
+                if (element.Text.Contains(ingredientName))
                 {
                     return true;
                 }
@@ -63,6 +69,35 @@ namespace ReactFridgeTests.Pages
             ingredientNameInput.SendKeys(ingredientName);
             ingredientQuantityInput.SendKeys(ingredientQuantity);
             AddItemButton.Click();
+        }
+
+        //selects a recipe from the recipeDropDown
+        public void selectRecipe(string ingredientName)
+        {
+            var selectElement = new SelectElement(recipeDropDown);
+            selectElement.SelectByText(ingredientName);           
+        }
+        public void clickUseItemButton()
+        {
+            useItemButton.Click();
+        }
+
+        public int getQuantityOfItem(string ingredientName)
+        {
+            foreach (IWebElement element in inventoryList)
+            {
+                var text = element.Text;
+                var ingredients = text.Split('\n');
+                foreach (string ingredient in ingredients)
+                {
+                    if (ingredient.Contains(ingredientName))
+                    {
+                        var quantity = ingredient.Split(':')[1].Trim();
+                        return Int32.Parse(quantity);
+                    }
+                }
+            }
+            return 0;
         }
     }
 }

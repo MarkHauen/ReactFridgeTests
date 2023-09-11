@@ -1,7 +1,23 @@
 ﻿namespace ReactFridgeTests.TestBase
 {
+    [TestClass]
     public class TestBase
     {
+
+
+        [AssemblyInitialize]
+        public static void AssemblyInit(TestContext context)
+        {
+            Console.WriteLine("ASSEMBLY INIT");
+        }
+
+        [AssemblyCleanup]
+        public static void AssemblyCleanup()
+        {
+            Console.WriteLine("ASSEMBLY CLEANUP");
+        }
+
+
 
         public string jira(int ticketNumber)
         {
